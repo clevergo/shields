@@ -1,5 +1,8 @@
-module clevergo.tech/____
+module clevergo.tech/shields
 
 go 1.13
 
-require github.com/stretchr/testify v1.5.1 // indirect
+require (
+	github.com/gorilla/schema v1.1.0
+	github.com/stretchr/testify v1.5.1
+)
