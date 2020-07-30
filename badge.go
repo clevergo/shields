@@ -20,7 +20,7 @@ func init() {
 type Badge struct {
 	// Schema version. Always the number 1.
 	// Required.
-	Version int `json:"schema_version" schema:"-"`
+	Version int `json:"schemaVersion" schema:"-"`
 
 	// The left text, or the empty string to omit the left side of the badge.
 	// Required.

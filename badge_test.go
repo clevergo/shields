@@ -33,7 +33,7 @@ func TestFromRequest(t *testing.T) {
 	label := "foo"
 	message := "bar"
 	values := url.Values{}
-	values.Set("schema_version", "2") // ignored
+	values.Set("schemaVersion", "2") // ignored
 	values.Set("label", "fizz")
 	values.Set("labelColor", ColorGreen)
 	values.Set("message", "buzz") // ignored
