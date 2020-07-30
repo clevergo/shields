@@ -47,7 +47,8 @@ func TestFromRequest(t *testing.T) {
 	values.Set("style", StylePlastic)
 	values.Set("cacheSeconds", "500") // ignored
 	req := httptest.NewRequest(http.MethodGet, "/?"+values.Encode(), nil)
-	badge, err := FromRequest(req, label, message)
+	badge := New(label, message)
+	err := badge.ParseRequest(req)
 	assert.Nil(t, err)
 	assert.Equal(t, "fizz", badge.Label)
 	assert.Equal(t, ColorGreen, badge.LabelColor)

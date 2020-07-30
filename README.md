@@ -17,9 +17,10 @@ import (
 	"clevergo.tech/shields"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    // Creates a new badge from request.
-    badge, err := shields.FromRequest(r, "label", "message")
+func handler(w http.ResponseWriter, req *http.Request) {
+    badge := shields.New("label", "message")
+    badge.LabelColor = shields.ColorBlue
+    err := badge.ParseRequest(req)
     if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return

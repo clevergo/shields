@@ -82,9 +82,7 @@ func New(label, message string) *Badge {
 	}
 }
 
-// FromRequest creates a badge from a request.
-func FromRequest(r *http.Request, label, message string) (*Badge, error) {
-	badge := New(label, message)
-	err := decoder.Decode(badge, r.URL.Query())
-	return badge, err
+// ParseRequest parses request query params.
+func (badge *Badge) ParseRequest(req *http.Request) error {
+	return decoder.Decode(badge, req.URL.Query())
 }
