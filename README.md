@@ -26,13 +26,13 @@ func handler(w http.ResponseWriter, req *http.Request) {
         return
     }
 
-	data, err := json.Marshal(badge)
-	if err != nil {
+    data, err := json.Marshal(badge)
+    if err != nil {
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return
-	}
+    }
 
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(data)
+    w.Header().Set("Content-Type", "application/json")
+    w.Write(data)
 }
 ```
